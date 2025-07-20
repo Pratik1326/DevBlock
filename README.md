@@ -1,47 +1,33 @@
-# SaaS Tool Builder
+# DevBlocks - SaaS Tool Builder
 
-A modern, drag-and-drop web application builder that allows users to create beautiful web apps without writing code. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+A modern, drag-and-drop SaaS application builder built with Next.js 14, React 18, and TypeScript.
 
 ## 🚀 Features
 
-### Core Functionality
-- **Drag & Drop Builder**: Intuitive visual builder with real-time preview
-- **Widget Library**: Text, Input, Button, Table, Chart, and To-Do widgets
-- **Template System**: Pre-built templates for CRM, Budget Tracker, and To-Do apps
-- **Real-time Preview**: Toggle between edit and preview modes
-- **Properties Panel**: Customize widget appearance and behavior
-- **Responsive Design**: Works on desktop and mobile devices
-
-### User Experience
-- **Modern UI**: Clean, professional interface with dark/light theme support
-- **Smooth Animations**: Framer Motion powered transitions and interactions
-- **Intuitive Navigation**: Easy-to-use interface for non-technical users
-- **Export Options**: Save projects as JSON or export as images
-
-### Authentication & Storage
-- **User Accounts**: Optional login for saving and accessing projects
-- **Project Management**: View, edit, and delete saved projects
-- **Local Storage**: Projects persist in browser storage
-- **Firebase Integration**: Ready for cloud storage and authentication
+- **Drag & Drop Builder**: Intuitive canvas-based interface for building SaaS applications
+- **Pre-built Templates**: Ready-to-use templates for common SaaS applications
+- **Widget Library**: Rich collection of customizable widgets (text, buttons, forms, charts, tables)
+- **Real-time Preview**: See changes instantly as you build
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Authentication System**: User registration, login, and profile management
+- **Project Management**: Save, load, and manage multiple projects
+- **Dark Mode**: Beautiful dark/light theme support
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **State Management**: Zustand with persistence
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Authentication**: Firebase Auth (configured)
-- **Database**: Firestore (configured)
-- **Deployment**: Vercel ready
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, CSS Modules
+- **State Management**: Zustand
+- **UI Components**: Custom components with Radix UI primitives
+- **Authentication**: Local storage-based auth system
+- **Deployment**: Vercel-ready
 
 ## 📦 Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd saas-tool-builder
+   git clone https://github.com/Pratik1326/DevBlock.git
+   cd DevBlock
    ```
 
 2. **Install dependencies**
@@ -49,99 +35,115 @@ A modern, drag-and-drop web application builder that allows users to create beau
    npm install
    ```
 
-3. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🎯 Usage
+## 🎯 Demo Accounts
 
-### Getting Started
-1. **Landing Page**: Visit the homepage to see the builder overview
-2. **Start Building**: Click "Start from Blank" or "Use Template"
-3. **Add Widgets**: Drag widgets from the sidebar to the canvas
-4. **Customize**: Select widgets to edit their properties
-5. **Preview**: Toggle preview mode to see the final result
-6. **Save**: Login to save your projects for later access
-
-### Widget Types
-- **Text**: Display static text content with customizable styling
-- **Input**: Text input fields with placeholder and validation
-- **Button**: Clickable buttons with custom colors and text
-- **Table**: Data tables with sortable columns
-- **Chart**: Simple bar charts for data visualization
-- **To-Do**: Task lists with checkboxes
-
-### Templates
-- **To-Do App**: Complete task management application
-- **CRM Dashboard**: Customer relationship management interface
-- **Budget Tracker**: Personal finance and expense tracking
+For quick testing, use these demo accounts:
+- **Email**: `john@example.com` | **Password**: `demo123`
+- **Email**: `sarah@example.com` | **Password**: `demo123`
 
 ## 🏗️ Project Structure
 
 ```
-├── app/                    # Next.js app directory
+DevBlock/
+├── app/                    # Next.js App Router pages
 │   ├── auth/              # Authentication pages
 │   ├── builder/           # Main builder interface
-│   ├── dashboard/         # User project management
-│   ├── templates/         # Template selection
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Landing page
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── widgets/          # Widget implementations
-│   ├── canvas.tsx        # Main canvas component
-│   ├── properties-panel.tsx
-│   ├── theme-toggle.tsx
-│   └── widget-sidebar.tsx
-├── lib/                  # Utilities and configurations
-│   ├── firebase.ts       # Firebase configuration
-│   ├── store.ts          # Zustand state management
-│   ├── templates.ts      # Pre-built templates
-│   └── utils.ts          # Utility functions
+│   ├── dashboard/         # User dashboard
+│   ├── templates/         # Template gallery
+│   ├── profile/           # User profile
+│   └── billing/           # Billing pages
+├── components/            # Reusable React components
+│   ├── canvas.tsx        # Main builder canvas
+│   ├── navigation.tsx    # Navigation component
+│   ├── auth-guard.tsx    # Authentication guard
+│   └── loading.tsx       # Loading components
+├── lib/                   # Utilities and store
+│   └── store.ts          # Zustand state management
 └── public/               # Static assets
 ```
 
-## 🔧 Configuration
+## 🎨 Available Widgets
 
-### Firebase Setup
-1. Create a new Firebase project
-2. Enable Authentication (Email/Password and Google)
-3. Enable Firestore Database
-4. Add your Firebase config to environment variables
-
-### Customization
-- **Themes**: Modify `tailwind.config.js` for custom colors
-- **Widgets**: Add new widgets in `components/widgets/`
-- **Templates**: Create templates in `lib/templates.ts`
-- **Styling**: Update `app/globals.css` for global styles
+- **Text Widget**: Headers, paragraphs, labels
+- **Button Widget**: Call-to-action buttons
+- **Input Widget**: Form inputs, text areas
+- **Table Widget**: Data tables with sorting
+- **Chart Widget**: Data visualization
+- **Todo Widget**: Task management
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+### Deploy to Vercel (Recommended)
 
-### Other Platforms
-- **Netlify**: Build command: `npm run build`
-- **Railway**: Add build script to package.json
-- **Docker**: Use multi-stage build for production
+1. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Deploy automatically
+
+2. **Environment Variables**
+   - No environment variables required for basic functionality
+
+3. **Custom Domain** (Optional)
+   - Add your custom domain in Vercel dashboard
+
+### Deploy to Other Platforms
+
+The app is compatible with:
+- **Netlify**: Use `npm run build` and deploy the `out` folder
+- **Railway**: Direct deployment from GitHub
+- **Heroku**: Use the Node.js buildpack
+
+## 🔧 Development
+
+### Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
+
+### Adding New Widgets
+
+1. Create widget component in `components/widgets/`
+2. Add widget type to store types
+3. Update canvas rendering logic
+4. Add to widget sidebar
+
+## 📱 Responsive Design
+
+The application is fully responsive and works on:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
+
+## 🎯 Key Features
+
+### Builder Interface
+- Drag and drop widgets onto canvas
+- Resize and reposition widgets
+- Real-time property editing
+- Keyboard shortcuts (Delete, Ctrl+Z, etc.)
+
+### Template System
+- Pre-built templates for common use cases
+- Customizable template widgets
+- One-click template application
+
+### Project Management
+- Save projects locally
+- Load existing projects
+- Project metadata tracking
+- Recent projects list
 
 ## 🤝 Contributing
 
@@ -151,21 +153,23 @@ A modern, drag-and-drop web application builder that allows users to create beau
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
-- [Framer Motion](https://www.framer.com/motion/) for smooth animations
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
-- [Lucide](https://lucide.dev/) for beautiful icons
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- State management with [Zustand](https://zustand-demo.pmnd.rs/)
+- Icons from [Lucide React](https://lucide.dev/)
 
 ## 📞 Support
 
-For support, email support@saasbuilder.com or create an issue in the repository.
+If you have any questions or need help:
+- Create an issue on GitHub
+- Contact: pratik1326@gmail.com
 
 ---
 
-Built with ❤️ using Next.js and TypeScript 
+**Made with ❤️ by Pratik1326** 
